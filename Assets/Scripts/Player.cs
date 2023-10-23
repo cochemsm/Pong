@@ -11,6 +11,10 @@ public class Player : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        rigidbody2d.velocity = new Vector2(0, Input.GetAxis("Vertical") * speed);
+        if (name == "PlayerOne") {
+            rigidbody2d.velocity = new Vector2(0, Input.GetAxisRaw("PlayerOne") * speed);
+        } else {
+            rigidbody2d.velocity = new Vector2(0, Input.GetAxisRaw("PlayerTwo") * speed);
+        }
     }
 }
